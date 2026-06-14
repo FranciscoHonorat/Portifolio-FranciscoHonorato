@@ -1,348 +1,348 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francisco Honorat - Portfólio Dev</title>
+    <meta name="description" content="Francisco Honorat — Full Stack Developer building scalable backends and modern web apps with Node.js, TypeScript and React.">
+    <title>Francisco Honorat — Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <h1>Francisco Honorat</h1>
-                <p class="subtitle">Full Stack Developer</p>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="nav-brand">
+                <span class="brand-mark">FH</span>
+                <span class="brand-text">Francisco Honorat</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#learning">Learning</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
+    <!-- Hero -->
+    <header class="hero" id="home">
+        <div class="container hero-grid">
             <div class="hero-content">
-                <h1>Olá! 👋 Sou Francisco Honorat</h1>
-                <p class="hero-subtitle">Desenvolvedor Full Stack com experiência em sistemas distribuídos, arquitetura de software e produção real</p>
+                <p class="hero-eyebrow">Full Stack Developer</p>
+                <h1>Hi, I'm <span class="accent">Francisco Honorat</span></h1>
+                <p class="hero-subtitle">
+                    I build reliable, scalable software — from well-architected REST APIs and
+                    distributed systems on the backend to clean, responsive interfaces on the
+                    frontend. Focused on clean code, solid architecture and production-ready solutions.
+                </p>
                 <div class="hero-buttons">
-                    <a href="https://github.com/FranciscoHonorat" class="btn btn-primary" target="_blank">
-                        <i class="fab fa-github"></i> Ver GitHub
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-folder-open"></i> View Projects
                     </a>
-                    <a href="#contato" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i> Contato
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Get in Touch
                     </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/FranciscoHonorat" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/francisco-jefferson-batista-honorato/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:jeffhonorato230@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="code-bar">
+                        <span></span><span></span><span></span>
+                    </div>
+<pre><code><span class="c-key">const</span> <span class="c-var">developer</span> = {
+  name: <span class="c-str">'Francisco Honorat'</span>,
+  role: <span class="c-str">'Full Stack Developer'</span>,
+  stack: [<span class="c-str">'Go'</span>, <span class="c-str">'Node.js'</span>, <span class="c-str">'TypeScript'</span>, <span class="c-str">'React'</span>],
+  focus: <span class="c-str">'scalable, clean systems'</span>,
+  learning: <span class="c-bool">true</span>
+};</code></pre>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Sobre Section -->
-    <section id="sobre" class="about">
+    <!-- About -->
+    <section id="about" class="section about">
         <div class="container">
             <div class="section-header">
-                <h2>Sobre Mim</h2>
-                <p class="section-tagline">Desenvolvedor, arquiteto de software e apaixonado por código de qualidade</p>
+                <span class="section-kicker">01 — About</span>
+                <h2>About Me</h2>
             </div>
-
-            <div class="about-content">
-                <!-- Left: Biography -->
-                <div class="about-left">
-                    <div class="profile-image-container">
+            <div class="about-grid">
+                <div class="about-media">
+                    <div class="profile-frame">
                         <img src="images/profile.jpeg" alt="Francisco Honorat" class="profile-image">
                     </div>
-
-                    <div class="bio-card">
-                        <h3>Quem sou?</h3>
-                        <p>
-                            Sou <strong>Francisco Honorat</strong>, desenvolvedor full stack com paixão por resolver problemas complexos através de código elegante e arquitetura sólida. Com experiência em sistemas distribuídos e produção real, trabalho para criar soluções escaláveis que fazem diferença.
-                        </p>
-                        <p>
-                            Minha jornada no desenvolvimento começou com curiosidade sobre como as coisas funcionam por trás da interface. Hoje, entendo tanto a complexidade do backend quanto a importância de um frontend intuitivo e performático.
-                        </p>
-                    </div>
-
                     <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-number">7+</div>
-                            <div class="stat-label">Projetos</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">4+</div>
-                            <div class="stat-label">Anos Dev</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Endpoints API</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Dedicação</div>
-                        </div>
+                        <div class="stat-item"><span class="stat-number">6</span><span class="stat-label">Featured Projects</span></div>
+                        <div class="stat-item"><span class="stat-number">50+</span><span class="stat-label">API Endpoints</span></div>
+                        <div class="stat-item"><span class="stat-number">15+</span><span class="stat-label">Technologies</span></div>
+                        <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">Core Languages</span></div>
                     </div>
                 </div>
-
-                <!-- Right: Skills & Values -->
-                <div class="about-right">
-                    <div class="skills-section">
-                        <h4>Expertise Técnico</h4>
-                        <div class="expertise-list">
-                            <div class="expertise-item">
-                                <i class="fas fa-server"></i>
-                                <div>
-                                    <strong>Backend Enterprise</strong>
-                                    <p>Node.js, TypeScript, Express, Fastify, APIs REST robustas</p>
-                                </div>
-                            </div>
-                            <div class="expertise-item">
-                                <i class="fas fa-code"></i>
-                                <div>
-                                    <strong>Frontend Moderno</strong>
-                                    <p>React, TypeScript, Vite, Zustand, UX/UI responsivo</p>
-                                </div>
-                            </div>
-                            <div class="expertise-item">
-                                <i class="fas fa-database"></i>
-                                <div>
-                                    <strong>Dados & Banco de Dados</strong>
-                                    <p>PostgreSQL, Redis, TimescaleDB, Prisma ORM, streams</p>
-                                </div>
-                            </div>
-                            <div class="expertise-item">
-                                <i class="fas fa-building"></i>
-                                <div>
-                                    <strong>Arquitetura & DevOps</strong>
-                                    <p>Sistemas distribuídos, microserviços, Docker, Git</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="values-section">
-                        <h4>Valores & Metodologia</h4>
-                        <div class="values-list">
-                            <div class="value-item">
-                                <span class="value-icon">✓</span>
-                                <div>
-                                    <strong>Código de Qualidade</strong>
-                                    <p>Clean code, SOLID, padrões enterprise</p>
-                                </div>
-                            </div>
-                            <div class="value-item">
-                                <span class="value-icon">✓</span>
-                                <div>
-                                    <strong>Produção First</strong>
-                                    <p>Foco em performance, escalabilidade e confiabilidade</p>
-                                </div>
-                            </div>
-                            <div class="value-item">
-                                <span class="value-icon">✓</span>
-                                <div>
-                                    <strong>Aprendizado Contínuo</strong>
-                                    <p>Sempre acompanhando novas tecnologias e best practices</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="about-text">
+                    <p>
+                        I'm a full stack developer who enjoys turning complex problems into clean,
+                        maintainable software. My work spans the whole stack — building backends in
+                        <strong>Go</strong> and <strong>Node.js / TypeScript</strong>, modeling data
+                        with PostgreSQL, MongoDB, Redis and Prisma, and crafting modern interfaces
+                        with <strong>React</strong>.
+                    </p>
+                    <p>
+                        I care about the fundamentals: <strong>Hexagonal / Clean Architecture</strong>,
+                        SOLID principles, validation, security and observability. I've built everything
+                        from Go microservices communicating over <strong>gRPC</strong> with
+                        event-driven RabbitMQ flows, to a production-grade observability platform with
+                        Redis Streams and REST APIs with auth, rate limiting and Swagger docs.
+                    </p>
+                    <p>
+                        I'm always learning — currently deepening my knowledge of distributed
+                        systems, testing and DevOps practices to ship software that scales with confidence.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight"><i class="fas fa-check-circle"></i> Clean code &amp; SOLID principles</div>
+                        <div class="highlight"><i class="fas fa-check-circle"></i> Layered / Clean Architecture</div>
+                        <div class="highlight"><i class="fas fa-check-circle"></i> Security &amp; API best practices</div>
+                        <div class="highlight"><i class="fas fa-check-circle"></i> Continuous learning</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projetos" class="projects">
+    <!-- Skills -->
+    <section id="skills" class="section skills">
         <div class="container">
-            <h2>Meus Projetos</h2>
-            <p class="section-subtitle">6 projetos que demonstram minha experiência em desenvolvimento de software</p>
-            
+            <div class="section-header">
+                <span class="section-kicker">02 — Skills</span>
+                <h2>What I Do</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-server"></i>
+                    <h3>Backend Engineering</h3>
+                    <p>Robust REST APIs with Go, Node.js, TypeScript, Express and Gin. JWT auth, rate limiting, validation with Zod, structured logging and Swagger documentation.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Frontend Development</h3>
+                    <p>Responsive, accessible UIs with React, TypeScript and Vite. State management with Zustand and React Query, plus clean component design.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Data &amp; Databases</h3>
+                    <p>PostgreSQL, SQLite, MongoDB and TimescaleDB. Caching and streaming with Redis, modeling with Prisma, Sequelize and Mongoose.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-sitemap"></i>
+                    <h3>Architecture</h3>
+                    <p>Clean &amp; Hexagonal Architecture, layered design, distributed systems and microservices. Separation of concerns, testability and scalability by design.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>Security</h3>
+                    <p>Authentication &amp; authorization, input sanitization, security headers, rate limiting, TLS and idempotent webhooks — applied OWASP practices throughout.</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-gears"></i>
+                    <h3>DevOps &amp; Tooling</h3>
+                    <p>Docker &amp; Docker Compose, Kubernetes, Prometheus, Git workflows, monorepos and CI/CD pipelines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">03 — Projects</span>
+                <h2>Featured Projects</h2>
+                <p class="section-subtitle">Selected projects that show how I design, build and ship software.</p>
+            </div>
             <div class="projects-grid">
-                <!-- Projeto 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🔥 Hermes Observability</h3>
-                        <span class="badge badge-advanced">Platform</span>
-                    </div>
-                    <p class="project-description">
-                        Plataforma de observabilidade completa com collector, processor, API e dashboard. Integração com apps Node.js via SDK, processamento em Redis Streams.
-                    </p>
-                    <div class="project-tech">
-                        <small>Node.js • React • PostgreSQL • TimescaleDB • Redis Streams</small>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://github.com/FranciscoHonorat/hermes-observability" target="_blank" class="link-btn">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
 
-                <!-- Projeto 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🗺️ Sistema de Geolocalização e Rotas</h3>
-                        <span class="badge badge-advanced">Maps & GIS</span>
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-icon">🔭</span>
+                        <span class="badge badge-platform">Platform</span>
                     </div>
+                    <h3>Hermes Observability</h3>
                     <p class="project-description">
-                        Web app de geolocalização e cálculo de rotas com integração OpenStreetMap, Nominatim e OSRM. Implementa Clean Architecture com cache Redis.
+                        Production-ready observability platform for Node.js apps — agent SDK, collector,
+                        processor and React dashboard. Metrics flow through Redis Streams and persist in
+                        TimescaleDB, with threshold-based email alerts.
                     </p>
-                    <div class="project-tech">
-                        <small>Node.js • React • TypeScript • Leaflet • Redis</small>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://github.com/FranciscoHonorat/Sistema-de-Geolocaliza--o-e-Rotas" target="_blank" class="link-btn">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
+                    <div class="project-tech"><span>Node.js</span><span>TypeScript</span><span>Redis Streams</span><span>TimescaleDB</span><span>React</span></div>
+                    <a href="https://github.com/FranciscoHonorat/hermes-observability" target="_blank" rel="noopener" class="link-btn"><i class="fab fa-github"></i> View on GitHub</a>
+                </article>
 
-                <!-- Projeto 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🤖 B2B Product Scraper</h3>
-                        <span class="badge badge-advanced">Data Mining</span>
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-icon">🎬</span>
+                        <span class="badge badge-go">Go · Microservices</span>
                     </div>
+                    <h3>Movies API</h3>
                     <p class="project-description">
-                        Ferramenta robusta de web scraping para coleta automatizada de dados de produtos B2B. Implementa rate limiting, proxy rotation e tratamento de erros.
+                        Movie REST API built as Go microservices — an HTTP API Gateway and a gRPC Movies
+                        Service communicating via Protobuf. Hexagonal architecture, MongoDB/DynamoDB
+                        (LocalStack) adapters, event-driven creation via RabbitMQ (202 Accepted),
+                        Swagger docs, Kubernetes manifests and 20 unit tests.
                     </p>
-                    <div class="project-tech">
-                        <small>Python • BeautifulSoup • Requests • PostgreSQL</small>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://github.com/FranciscoHonorat/b2b-product-scraper" target="_blank" class="link-btn">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
+                    <div class="project-tech"><span>Go</span><span>gRPC</span><span>RabbitMQ</span><span>MongoDB</span><span>Kubernetes</span><span>Docker</span></div>
+                    <a href="https://github.com/FranciscoHonorat/movies" target="_blank" rel="noopener" class="link-btn"><i class="fab fa-github"></i> View on GitHub</a>
+                </article>
 
-                <!-- Projeto 4 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🍔 Good Hamburguer</h3>
-                        <span class="badge badge-intermediate">Full Stack</span>
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-icon">📗</span>
+                        <span class="badge badge-go">Go · REST</span>
                     </div>
+                    <h3>Books API</h3>
                     <p class="project-description">
-                        Aplicação web completa para gerenciamento e pedidos de hamburgueria. Inclui painel administrativo, carrinho de compras e sistema de pagamentos.
+                        REST API in Go for managing a book collection with filtering, pagination and
+                        sorting. Clean handler / service / repository layers, PostgreSQL with sqlc,
+                        Prometheus metrics, rate limiting, TLS, structured logging (slog) and graceful
+                        shutdown — fully containerized with Docker Compose.
                     </p>
-                    <div class="project-tech">
-                        <small>React • Node.js • Express • PostgreSQL • Stripe</small>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://github.com/FranciscoHonorat/good-hamburguer" target="_blank" class="link-btn">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
+                    <div class="project-tech"><span>Go</span><span>Gin</span><span>PostgreSQL</span><span>sqlc</span><span>Prometheus</span><span>Docker</span></div>
+                    <a href="https://github.com/FranciscoHonorat/REST-API-Golang" target="_blank" rel="noopener" class="link-btn"><i class="fab fa-github"></i> View on GitHub</a>
+                </article>
 
-                <!-- Projeto 5 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>📚 Sistema de Cadastros de Livros</h3>
-                        <span class="badge badge-intermediate">Full Stack</span>
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-icon">💼</span>
+                        <span class="badge badge-go">Go · Event-Driven</span>
                     </div>
+                    <h3>Mundo Invest — Backend</h3>
                     <p class="project-description">
-                        API REST completa para biblioteca com autenticação JWT, 24 endpoints para gerenciamento de usuários, livros e empréstimos.
+                        Customer-management REST API in Go with a simulated Pipefy integration over
+                        GraphQL. Hexagonal architecture (ports &amp; adapters), async event publishing to
+                        RabbitMQ, idempotent webhooks, SQLite persistence, Kubernetes manifests and
+                        graceful degradation via a noop publisher.
                     </p>
-                    <div class="project-tech">
-                        <small>Node.js • Express • Prisma • SQLite</small>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://github.com/FranciscoHonorat/Sistema-de-cadastros-de-livros" target="_blank" class="link-btn">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
+                    <div class="project-tech"><span>Go</span><span>GraphQL</span><span>RabbitMQ</span><span>SQLite</span><span>Kubernetes</span></div>
+                    <a href="https://github.com/FranciscoHonorat/mundo-invest" target="_blank" rel="noopener" class="link-btn"><i class="fab fa-github"></i> View on GitHub</a>
+                </article>
 
-                <!-- Projeto 6 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>🌐 API REST - Student Management</h3>
-                        <span class="badge badge-advanced">Enterprise</span>
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-icon">🤖</span>
+                        <span class="badge badge-fullstack">Scraping &amp; Data</span>
                     </div>
+                    <h3>B2B Product Scraper</h3>
                     <p class="project-description">
-                        API robusta com autenticação, rate limiting, validação Zod, Redis cache, logs Winston e 25+ endpoints. Documentação Swagger incluída.
+                        Production-grade universal scraper for B2B portals. A 3-level fallback strategy
+                        (selector → alternative → smart parsing) plus robust price parsing (BRL/USD),
+                        100% type-safe with Zod, persisted to Supabase/PostgreSQL. CLI for single, CSV
+                        and JSON batches, with structured logging and CI tests.
                     </p>
-                    <div class="project-tech">
-                        <small>Node.js • TypeScript • Prisma • PostgreSQL • Redis</small>
+                    <div class="project-tech"><span>TypeScript</span><span>Playwright</span><span>Supabase</span><span>Zod</span><span>PostgreSQL</span></div>
+                    <a href="https://github.com/FranciscoHonorat/b2b-product-scraper" target="_blank" rel="noopener" class="link-btn"><i class="fab fa-github"></i> View on GitHub</a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-icon">🗺️</span>
+                        <span class="badge badge-platform">Maps &amp; GIS</span>
                     </div>
-                    <div class="project-actions">
-                        <a href="https://github.com/FranciscoHonorat/API-REST" target="_blank" class="link-btn">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
-                </div>
+                    <h3>Geolocation &amp; Routing System</h3>
+                    <p class="project-description">
+                        Geocoding and optimized route calculation with an interactive map. Clean
+                        Architecture across domain, application and infrastructure layers; multiple map
+                        providers (Google Maps, OpenStreetMap, ViaCEP), Haversine distance, Redis caching,
+                        rate limiting and Zod validation — with a React + Leaflet frontend.
+                    </p>
+                    <div class="project-tech"><span>Node.js</span><span>TypeScript</span><span>React</span><span>Leaflet</span><span>Redis</span></div>
+                    <a href="https://github.com/FranciscoHonorat/Sistema-de-Geolocaliza--o-e-Rotas" target="_blank" rel="noopener" class="link-btn"><i class="fab fa-github"></i> View on GitHub</a>
+                </article>
+
             </div>
         </div>
     </section>
 
-    <!-- Stack Section -->
-    <section class="stack">
+    <!-- Stack -->
+    <section id="stack" class="section stack">
         <div class="container">
-            <h2>Stack Principal</h2>
+            <div class="section-header">
+                <span class="section-kicker">04 — Stack</span>
+                <h2>Tech Stack</h2>
+            </div>
             <div class="stack-grid">
                 <div class="stack-category">
-                    <h4>Backend</h4>
-                    <ul>
-                        <li>Node.js</li>
-                        <li>TypeScript</li>
-                        <li>Express</li>
-                        <li>Fastify</li>
-                    </ul>
+                    <h4><i class="fas fa-server"></i> Backend</h4>
+                    <ul><li>Go</li><li>Node.js</li><li>TypeScript</li><li>Gin</li><li>gRPC</li><li>Express</li></ul>
                 </div>
                 <div class="stack-category">
-                    <h4>Frontend</h4>
-                    <ul>
-                        <li>React</li>
-                        <li>TypeScript</li>
-                        <li>Vite</li>
-                        <li>Zustand</li>
-                    </ul>
+                    <h4><i class="fas fa-code"></i> Frontend</h4>
+                    <ul><li>React</li><li>TypeScript</li><li>Vite</li><li>Zustand</li><li>React Query</li></ul>
                 </div>
                 <div class="stack-category">
-                    <h4>Banco de Dados</h4>
-                    <ul>
-                        <li>PostgreSQL</li>
-                        <li>Redis</li>
-                        <li>TimescaleDB</li>
-                        <li>Prisma ORM</li>
-                    </ul>
+                    <h4><i class="fas fa-database"></i> Data</h4>
+                    <ul><li>PostgreSQL</li><li>MongoDB</li><li>DynamoDB</li><li>Redis</li><li>TimescaleDB</li><li>Prisma</li></ul>
                 </div>
                 <div class="stack-category">
-                    <h4>DevOps</h4>
-                    <ul>
-                        <li>Docker</li>
-                        <li>Git</li>
-                        <li>GitHub</li>
-                        <li>Vercel</li>
-                    </ul>
+                    <h4><i class="fas fa-gears"></i> DevOps &amp; Tools</h4>
+                    <ul><li>Docker</li><li>Kubernetes</li><li>RabbitMQ</li><li>Prometheus</li><li>Git &amp; GitHub</li><li>Swagger</li></ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contato" class="contact">
+    <!-- Currently Learning -->
+    <section id="learning" class="section learning">
         <div class="container">
-            <h2>Vamos Conversar?</h2>
-            <p class="contact-subtitle">Estou aberto a novas oportunidades e projetos interessantes</p>
-            
+            <div class="section-header">
+                <span class="section-kicker">05 — Learning</span>
+                <h2>Currently Learning</h2>
+                <p class="section-subtitle">Always leveling up. Right now I'm focused on:</p>
+            </div>
+            <div class="learning-grid">
+                <div class="learning-item"><i class="fas fa-network-wired"></i><div><strong>Distributed Systems</strong><p>Message streaming, consistency and resilient architectures.</p></div></div>
+                <div class="learning-item"><i class="fas fa-vial"></i><div><strong>Automated Testing</strong><p>Unit, integration and e2e testing with high coverage.</p></div></div>
+                <div class="learning-item"><i class="fas fa-cloud"></i><div><strong>DevOps &amp; CI/CD</strong><p>Containerization, pipelines and reliable deployments.</p></div></div>
+                <div class="learning-item"><i class="fas fa-chart-line"></i><div><strong>Observability</strong><p>Metrics, logging and monitoring for production systems.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">06 — Contact</span>
+                <h2>Let's Work Together</h2>
+                <p class="section-subtitle">Open to new opportunities and interesting projects. Let's talk.</p>
+            </div>
             <div class="contact-methods">
                 <a href="mailto:jeffhonorato230@gmail.com" class="contact-card">
                     <i class="fas fa-envelope"></i>
                     <h4>Email</h4>
                     <p>jeffhonorato230@gmail.com</p>
                 </a>
-                <a href="https://github.com/FranciscoHonorat" target="_blank" class="contact-card">
+                <a href="https://github.com/FranciscoHonorat" target="_blank" rel="noopener" class="contact-card">
                     <i class="fab fa-github"></i>
                     <h4>GitHub</h4>
-                    <p>github.com/FranciscoHonorat</p>
+                    <p>@FranciscoHonorat</p>
                 </a>
-                <a href="https://www.linkedin.com/in/francisco-jefferson-batista-honorato/" target="_blank" class="contact-card">
+                <a href="https://www.linkedin.com/in/francisco-jefferson-batista-honorat/" target="_blank" rel="noopener" class="contact-card">
                     <i class="fab fa-linkedin"></i>
                     <h4>LinkedIn</h4>
-                    <p>linkedin.com/in/francisco-jefferson-batista-honorato</p>
+                    <p>Francisco Jefferson B. Honorat</p>
                 </a>
             </div>
         </div>
@@ -350,9 +350,14 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Francisco Honorat. Todos os direitos reservados.</p>
-            <p>Desenvolvido com <i class="fas fa-heart"></i> para o GitHub</p>
+        <div class="container footer-inner">
+            <span class="brand-mark">FH</span>
+            <p>&copy; 2026 Francisco Honorat. Built with care and clean code.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/FranciscoHonorat" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/francisco-jefferson-batista-honorat/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:jeffhonorato230@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 

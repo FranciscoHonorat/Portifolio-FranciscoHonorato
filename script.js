@@ -1,49 +1,83 @@
-// Smooth scroll behavior para links de navegação
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && document.querySelector(href)) {
-            e.preventDefault();
-            document.querySelector(href).scrollIntoView({
-                behavior: 'smooth'
+// ===== Navbar: shadow on scroll =====
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ===== Mobile menu toggle =====
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    const icon = navToggle.querySelector('i');
+    icon.className = navLinks.classList.contains('open') ? 'fas fa-xmark' : 'fas fa-bars';
+});
+
+// Close mobile menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.querySelector('i').className = 'fas fa-bars';
+    });
+});
+
+// ===== Active nav link on scroll =====
+const sections = document.querySelectorAll('section[id], header[id]');
+const navItems = navLinks.querySelectorAll('a');
+
+const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navItems.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
             });
         }
     });
-});
+}, { rootMargin: '-45% 0px -50% 0px' });
 
-// Navbar background change on scroll
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
-    } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
-});
+sections.forEach(s => navObserver.observe(s));
 
-// Lazy loading animation
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+// ===== Reveal on scroll =====
+const revealTargets = document.querySelectorAll(
+    '.section-header, .skill-card, .project-card, .stack-category, .learning-item, .contact-card, .about-media, .about-text, .code-window'
+);
+revealTargets.forEach(el => el.classList.add('reveal'));
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.style.transitionDelay = `${(i % 3) * 80}ms`;
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, { threshold: 0.12 });
 
-// Observar cards de projetos
-document.querySelectorAll('.project-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
-});
+revealTargets.forEach(el => revealObserver.observe(el));
 
-// Analytics simples (opcional)
-console.log('Portfólio carregado com sucesso!');
-console.log('Francisco Honorat - Full Stack Developer');
+// ===== Animated stat counters =====
+const counters = document.querySelectorAll('.stat-number');
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const raw = el.textContent.trim();
+        const target = parseInt(raw, 10);
+        if (!isNaN(target)) {
+            const suffix = raw.replace(/[0-9]/g, '');
+            let current = 0;
+            const step = Math.max(1, Math.ceil(target / 30));
+            const tick = () => {
+                current = Math.min(current + step, target);
+                el.textContent = current + suffix;
+                if (current < target) requestAnimationFrame(tick);
+            };
+            tick();
+        }
+        counterObserver.unobserve(el);
+    });
+}, { threshold: 0.5 });
+
+counters.forEach(c => counterObserver.observe(c));
