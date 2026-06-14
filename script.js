@@ -1,7 +1,7 @@
-// ===== Navbar: shadow on scroll =====
-const navbar = document.getElementById('navbar');
+// ===== Nav: background on scroll =====
+const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    nav.classList.toggle('scrolled', window.scrollY > 20);
 });
 
 // ===== Mobile menu toggle =====
@@ -9,16 +9,13 @@ const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
 navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    const icon = navToggle.querySelector('i');
-    icon.className = navLinks.classList.contains('open') ? 'fas fa-xmark' : 'fas fa-bars';
+    const open = navLinks.classList.toggle('open');
+    navToggle.textContent = open ? 'Close' : 'Menu';
 });
-
-// Close mobile menu when a link is clicked
 navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('open');
-        navToggle.querySelector('i').className = 'fas fa-bars';
+        navToggle.textContent = 'Menu';
     });
 });
 
@@ -30,9 +27,7 @@ const navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
-            navItems.forEach(a => {
-                a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
-            });
+            navItems.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
         }
     });
 }, { rootMargin: '-45% 0px -50% 0px' });
@@ -41,14 +36,14 @@ sections.forEach(s => navObserver.observe(s));
 
 // ===== Reveal on scroll =====
 const revealTargets = document.querySelectorAll(
-    '.section-header, .skill-card, .project-card, .stack-category, .learning-item, .contact-card, .about-media, .about-text, .code-window'
+    '.section-head, .about-portrait, .about-copy, .skill, .project-row, .stack-col, .learn-item, .contact-inner'
 );
 revealTargets.forEach(el => el.classList.add('reveal'));
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-            entry.target.style.transitionDelay = `${(i % 3) * 80}ms`;
+            entry.target.style.transitionDelay = `${(i % 4) * 70}ms`;
             entry.target.classList.add('visible');
             revealObserver.unobserve(entry.target);
         }
